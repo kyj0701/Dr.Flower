@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 200275232}
   - component: {fileID: 200275231}
   - component: {fileID: 200275230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 434074782}
   - component: {fileID: 434074781}
   - component: {fileID: 434074780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 718383742}
   - component: {fileID: 718383741}
   - component: {fileID: 718383740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d473d02140f24044a86272633fcb0b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 5
+  jumpPower: 10
   maxSpeed: 5
   reduceSpeed: 0
 --- !u!1 &980624470
@@ -658,7 +658,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 1002176297}
   - component: {fileID: 1002176296}
   - component: {fileID: 1002176295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 1145833131}
   - component: {fileID: 1145833130}
   - component: {fileID: 1145833129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +917,7 @@ GameObject:
   - component: {fileID: 1221678040}
   - component: {fileID: 1221678039}
   - component: {fileID: 1221678038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: right (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 1382817132}
   - component: {fileID: 1382817131}
   - component: {fileID: 1382817130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1135,7 +1135,7 @@ GameObject:
   - component: {fileID: 1439747481}
   - component: {fileID: 1439747480}
   - component: {fileID: 1439747479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 1608200639}
   - component: {fileID: 1608200638}
   - component: {fileID: 1608200637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
