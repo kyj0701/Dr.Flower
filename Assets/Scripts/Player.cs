@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
     public float jumpPower;
     public float maxSpeed;
     public float reduceSpeed;
+    public int flowerCount;
+    public GameManager manager;
 
     void Awake()
     {
@@ -49,6 +52,28 @@ public class Player : MonoBehaviour
 
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Flower")
+        {
+            flowerCount++;
+            collision.gameObject.SetActive(false);
+        }
+        else if (collision.gameObject.tag == "Finish")
+        {
+            // Clear
+            if (flowerCount == manager.totalItemCount)
+            {
+
+            }
+            // Restart
+            else
+            {
+                SceneManager.LoadScene("Tutorial1");
+            }
+        }
+    }
+
     void FixedUpdate()
     {
         //move(left,right)
@@ -73,7 +98,7 @@ public class Player : MonoBehaviour
             RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform"));
             if (rayHit.collider != null)
             {
-                if (rayHit.distance < 1.2f)
+                if (rayHit.distance < 1.3f)
                     anim.SetBool("IsJumping", false);
             }
         }
