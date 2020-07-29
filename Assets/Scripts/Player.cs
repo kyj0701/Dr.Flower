@@ -91,13 +91,10 @@ public class Player : MonoBehaviour
         {
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
         }
-        Vector2 frontVec = new Vector2(rigid.position.x + 0.4f, rigid.position.y);
-        Vector2 backVec = new Vector2(rigid.position.x + -0.4f, rigid.position.y);
-        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-        Debug.DrawRay(backVec, Vector3.down, new Color(0, 1, 0));
+        Vector2 frontVec = new Vector2(rigid.position.x + 0.43f, rigid.position.y);
+        Vector2 backVec = new Vector2(rigid.position.x + -0.43f, rigid.position.y);
         RaycastHit2D rayHit_f = Physics2D.Raycast(frontVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
         RaycastHit2D rayHit_b = Physics2D.Raycast(backVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
-        //when falling
         //set layer as "Platform"
         if (rayHit_f.collider != null || rayHit_b.collider != null)
         {
