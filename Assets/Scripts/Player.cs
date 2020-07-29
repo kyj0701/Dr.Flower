@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    public GameObject clearSet;
     public float jumpPower;
     public float maxSpeed;
     public float reduceSpeed;
@@ -60,18 +61,20 @@ public class Player : MonoBehaviour
         {
             flowerCount++;
             collision.gameObject.SetActive(false);
+            manager.GetItem(flowerCount);
         }
         else if (collision.gameObject.tag == "Finish")
         {
             // Clear
             if (flowerCount == manager.totalItemCount)
             {
-                SceneManager.LoadScene("SelectStage1");
+                clearSet.SetActive(true);
+                Time.timeScale = 0;
             }
             // Restart
             else
             {
-                SceneManager.LoadScene("");
+                SceneManager.LoadScene(manager.stageLevel);
             }
         }
     }
