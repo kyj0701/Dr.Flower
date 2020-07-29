@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float maxSpeed;
     public float reduceSpeed;
     public int flowerCount;
-    public GameManager manager;
+    public GameManagerLogic manager;
     bool CanJump;
 
     void Awake()
@@ -66,12 +66,12 @@ public class Player : MonoBehaviour
             // Clear
             if (flowerCount == manager.totalItemCount)
             {
-
+                SceneManager.LoadScene("Stage1");
             }
             // Restart
             else
             {
-                SceneManager.LoadScene("Tutorial1");
+                SceneManager.LoadScene("Stage1");
             }
         }
     }
