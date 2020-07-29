@@ -65,8 +65,10 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Finish")
         {
+            clearSet.SetActive(true);
+            Time.timeScale = 0;
             // Clear
-            if (flowerCount == manager.totalItemCount)
+            if (flowerCount > manager.totalItemCount * (4/5))
             {
                 clearSet.SetActive(true);
                 Time.timeScale = 0;
