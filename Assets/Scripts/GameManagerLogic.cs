@@ -5,4 +5,5 @@ using UnityEngine;
 public class GameManagerLogic : MonoBehaviour
 {
     public int totalItemCount;
+    public int stageLevel;
 }
