@@ -15,11 +15,14 @@ public class MainCamera : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         Offset = playerTransform.position;
         Offset.z = Camera_z;
+        Offset.y += 1;
     }
 
     void LateUpdate()
     {
+        
         Offset = playerTransform.position;
+        Offset.y += 1;
         Offset.z = Camera_z;
         transform.position = Offset;
     }
