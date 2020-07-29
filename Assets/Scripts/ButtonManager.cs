@@ -61,6 +61,30 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Stage1-5");
     }
+    /*public void SelectStage2()
+    {
+        SceneManager.LoadScene("SelectStage2");
+    }
+    public void SelectStage2_1()
+    {
+        SceneManager.LoadScene("Stage2-1");
+    }
+    public void SelectStage2_2()
+    {
+        SceneManager.LoadScene("Stage2-2");
+    }
+    public void SelectStage2_3()
+    {
+        SceneManager.LoadScene("Stage2-3");
+    }
+    public void SelectStage2_4()
+    {
+        SceneManager.LoadScene("Stage2-4");
+    }
+    public void SelectStage2_5()
+    {
+        SceneManager.LoadScene("Stage2-5");
+    }*/
     public void MainMenu()
     {
         SceneManager.LoadScene("Start");
