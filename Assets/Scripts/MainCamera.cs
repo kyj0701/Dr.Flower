@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    public Camera m_OrthographicCamera;
     public float camera_size = 4;
     public float Camera_z = -10;
     Transform playerTransform;
