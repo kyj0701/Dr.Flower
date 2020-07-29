@@ -66,12 +66,12 @@ public class Player : MonoBehaviour
             // Clear
             if (flowerCount == manager.totalItemCount)
             {
-                SceneManager.LoadScene("Stage1");
+                SceneManager.LoadScene("SelectStage1");
             }
             // Restart
             else
             {
-                SceneManager.LoadScene("Stage1");
+                SceneManager.LoadScene("");
             }
         }
     }
