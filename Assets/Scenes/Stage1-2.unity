@@ -3282,6 +3282,8 @@ MonoBehaviour:
   reduceSpeed: 0
   flowerCount: 0
   manager: {fileID: 1753958995}
+  windswitch: 0
+  windpower: 0
 --- !u!212 &1519458774
 SpriteRenderer:
   m_ObjectHideFlags: 0
