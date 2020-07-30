@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     public GameObject clearSet;
+    public GameObject clearState;
+    public Dictionary<string, bool> clearStateDic;
     public float jumpPower;
     public float maxSpeed;
     public float reduceSpeed;
@@ -76,11 +78,13 @@ public class Player : MonoBehaviour
             {
                 clearSet.SetActive(true);
                 Time.timeScale = 0;
+                if (!ButtonManager.clearStateDic.ContainsKey(SceneManager.GetActiveScene().name))
+                    ButtonManager.clearStateDic.Add(SceneManager.GetActiveScene().name, true);
             }
             // Restart
             else
             {
-                SceneManager.LoadScene(manager.stageLevel);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
