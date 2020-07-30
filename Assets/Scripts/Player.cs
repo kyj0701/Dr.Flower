@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public float reduceSpeed;
     public int flowerCount;
     public GameManagerLogic manager;
+    public bool windswitch;
+    public float windpower;
+    public float maxSpeedMultiplierwithWind;
     bool CanJump;
 
     void Awake()
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         CanJump = true;
+        
     }
 
     void Update()
@@ -85,11 +89,31 @@ public class Player : MonoBehaviour
     {
         //move(left,right)
         float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
+        rigid.AddForce(Vector2.right * (h-windpower), ForceMode2D.Impulse);
+
+
+
+
+
         //maxSpeed control
-        if (rigid.velocity.x > maxSpeed)
+        if (Mathf.Abs(rigid.velocity.x) > maxSpeed)
         {
-            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+            if(windswitch)
+            {
+                if(h > 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed / (maxSpeedMultiplierwithWind+windpower))
+                {
+                    rigid.velocity = new Vector2(maxSpeed / (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
+                }
+                else if (h <= 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed *(maxSpeedMultiplierwithWind + windpower))
+                {
+                    rigid.velocity = new Vector2((-1)* maxSpeed * (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
+                }
+            }
+            else
+            {
+                rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+            }
+            
         }
 
         else if (rigid.velocity.x < maxSpeed * (-1))
