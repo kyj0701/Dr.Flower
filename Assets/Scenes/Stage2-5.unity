@@ -20659,6 +20659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearSet: {fileID: 852488293}
+  clearState: {fileID: 0}
   jumpPower: 18
   maxSpeed: 7
   reduceSpeed: 0
