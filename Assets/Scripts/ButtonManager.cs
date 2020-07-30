@@ -8,6 +8,7 @@ public class ButtonManager : MonoBehaviour
 {
     public GameObject menuSet;
     public GameManagerLogic manager;
+    public static Dictionary<string, bool> clearStateDic;
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -32,10 +33,11 @@ public class ButtonManager : MonoBehaviour
     public void GameStart()
     {
         SceneManager.LoadScene("Stage0");
+        clearStateDic = new Dictionary<string, bool>();
     }
     public void Restart()
     {
-        SceneManager.LoadScene(manager.stageLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void SelectStage1()
     {
