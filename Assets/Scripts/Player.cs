@@ -96,34 +96,66 @@ public class Player : MonoBehaviour
 
 
         //maxSpeed control
-        if (Mathf.Abs(rigid.velocity.x) > maxSpeed)
+        if (rigid.velocity.x > maxSpeed)
         {
             if(windswitch)
             {
-                if(h > 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed / (maxSpeedMultiplierwithWind+windpower))
+                if(windpower > 0)
                 {
-                    rigid.velocity = new Vector2(maxSpeed / (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
+                    if (h > 0 && rigid.velocity.x > maxSpeed / (maxSpeedMultiplierwithWind + windpower))
+                    {
+                        rigid.velocity = new Vector2(h*maxSpeed / (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
+                    }   
                 }
-                else if (h < 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed *(maxSpeedMultiplierwithWind + windpower))
+                else if(windpower < 0)
                 {
-                    rigid.velocity = new Vector2((-1)* maxSpeed * (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
+                    
+                    if (h > 0 && rigid.velocity.x > maxSpeed * (maxSpeedMultiplierwithWind + (-1)*windpower))
+                    {
+                        rigid.velocity = new Vector2(h * maxSpeed * (maxSpeedMultiplierwithWind + (-1) * windpower), rigid.velocity.y);
+                    }
+                    else if (h == 0)
+                    {
+                        rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+                    }
                 }
-                else if (h == 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed)
-                {
-                    rigid.velocity = new Vector2((-1) * maxSpeed, rigid.velocity.y);
-                }
+                
             }
             else
             {
                 rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
             }
-            
         }
-
         else if (rigid.velocity.x < maxSpeed * (-1))
         {
-            rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+            if (windswitch)
+            {
+                if (windpower > 0)
+                {    
+                    if (h < 0 && rigid.velocity.x < (-1) * maxSpeed * (maxSpeedMultiplierwithWind + windpower))
+                    {
+                        rigid.velocity = new Vector2(h * maxSpeed * (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
+                    }
+                    else if (h == 0)
+                    {
+                        rigid.velocity = new Vector2((-1) * maxSpeed, rigid.velocity.y);
+                    }
+                }
+                else if (windpower < 0)
+                {
+                    if (h < 0 && rigid.velocity.x < (-1) * maxSpeed / (maxSpeedMultiplierwithWind + (-1) * windpower))
+                    {
+                        rigid.velocity = new Vector2(h * maxSpeed / (maxSpeedMultiplierwithWind + (-1) * windpower), rigid.velocity.y);
+                    }
+                }
+            }
+            else
+            {
+                rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+            }
         }
+
+
         Vector2 frontVec = new Vector2(rigid.position.x + 0.43f, rigid.position.y);
         Vector2 backVec = new Vector2(rigid.position.x + -0.43f, rigid.position.y);
         RaycastHit2D rayHit_f = Physics2D.Raycast(frontVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
