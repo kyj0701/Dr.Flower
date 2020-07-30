@@ -104,9 +104,13 @@ public class Player : MonoBehaviour
                 {
                     rigid.velocity = new Vector2(maxSpeed / (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
                 }
-                else if (h <= 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed *(maxSpeedMultiplierwithWind + windpower))
+                else if (h < 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed *(maxSpeedMultiplierwithWind + windpower))
                 {
                     rigid.velocity = new Vector2((-1)* maxSpeed * (maxSpeedMultiplierwithWind + windpower), rigid.velocity.y);
+                }
+                else if (h == 0 && Mathf.Abs(rigid.velocity.x) > maxSpeed)
+                {
+                    rigid.velocity = new Vector2((-1) * maxSpeed, rigid.velocity.y);
                 }
             }
             else
