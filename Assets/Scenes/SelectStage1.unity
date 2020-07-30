@@ -201,7 +201,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 148091973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1950727803}
+        m_MethodName: SelectStage2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &148091973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +263,7 @@ GameObject:
   - component: {fileID: 193717631}
   - component: {fileID: 193717630}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Stage1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6886792, b: 0.1543124, a: 1}
+  m_Color: {r: 0, g: 0.7254902, b: 0.882353, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -563,7 +574,7 @@ GameObject:
   - component: {fileID: 379736714}
   - component: {fileID: 379736713}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Stage1-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,7 +703,7 @@ GameObject:
   - component: {fileID: 562282669}
   - component: {fileID: 562282668}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Stage1-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1123,7 @@ GameObject:
   - component: {fileID: 1004718509}
   - component: {fileID: 1004718508}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Stage1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1241,7 +1252,7 @@ GameObject:
   - component: {fileID: 1335180376}
   - component: {fileID: 1335180375}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Stage1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
