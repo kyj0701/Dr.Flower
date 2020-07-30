@@ -61,7 +61,7 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Stage1-5");
     }
-    /*public void SelectStage2()
+    public void SelectStage2()
     {
         SceneManager.LoadScene("SelectStage2");
     }
@@ -84,7 +84,7 @@ public class ButtonManager : MonoBehaviour
     public void SelectStage2_5()
     {
         SceneManager.LoadScene("Stage2-5");
-    }*/
+    }
     public void MainMenu()
     {
         SceneManager.LoadScene("Start");
