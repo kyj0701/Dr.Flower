@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     public float windpower;
     public float maxSpeedMultiplierwithWind;
     bool CanJump;
+    //get horizontal input
+    static float h;
 
     void Awake()
     {
@@ -38,18 +40,24 @@ public class Player : MonoBehaviour
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("IsJumping", true);
         }
+        //move
+        //flip player
+        if (Input.GetButton("Horizontal"))
+        {
+            h = Input.GetAxisRaw("Horizontal");
+            spriteRenderer.flipX = h == -1;
+            rigid.AddForce(Vector2.right * (h) * Time.deltaTime*50, ForceMode2D.Impulse);
+            
+        }
+        rigid.AddForce(Vector2.right * ((-1) * windpower) * Time.deltaTime * 50, ForceMode2D.Impulse);
         //break when button up
         if (Input.GetButtonUp("Horizontal"))
         {
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * reduceSpeed, rigid.velocity.y);
         }
-        //flip player
-        if (Input.GetButton("Horizontal"))
-        {
-            spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
-        }
+        
         //set,reset walk animation
-        if (Mathf.Abs(rigid.velocity.x) < 0.3f)
+        if (Mathf.Abs(rigid.velocity.x) < 1.5f)
         {
             anim.SetBool("IsWalking", false);
         }
@@ -87,13 +95,14 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+        
     }
 
     void FixedUpdate()
     {
         //move(left,right)
-        float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * (h-windpower), ForceMode2D.Impulse);
+        /*float h = Input.GetAxisRaw("Horizontal");
+        rigid.AddForce(Vector2.right * (h-windpower), ForceMode2D.Impulse);*/
 
 
 
@@ -142,7 +151,9 @@ public class Player : MonoBehaviour
                     }
                     else if (h == 0)
                     {
+ 
                         rigid.velocity = new Vector2((-1) * maxSpeed, rigid.velocity.y);
+          
                     }
                 }
                 else if (windpower < 0)
@@ -160,15 +171,15 @@ public class Player : MonoBehaviour
         }
 
 
-        Vector2 frontVec = new Vector2(rigid.position.x + 0.43f, rigid.position.y);
-        Vector2 backVec = new Vector2(rigid.position.x + -0.43f, rigid.position.y);
+        Vector2 frontVec = new Vector2(rigid.position.x + 0.45f, rigid.position.y);
+        Vector2 backVec = new Vector2(rigid.position.x + -0.45f, rigid.position.y);
         RaycastHit2D rayHit_f = Physics2D.Raycast(frontVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
         RaycastHit2D rayHit_b = Physics2D.Raycast(backVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
         //set layer as "Platform"
         if (rayHit_f.collider != null || rayHit_b.collider != null)
         {
             CanJump = true;
-            if (rayHit_f.distance < 1.3f || rayHit_b.distance < 1.3f)
+            if (rayHit_f.distance < 1.2f || rayHit_b.distance < 1.2f)
                 anim.SetBool("IsJumping", false);
         }
         else
