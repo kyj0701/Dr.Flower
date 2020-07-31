@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameJamStage.unity
     guid: 0310cfbd5802bbc46ae43fd0203f82f1
+  - enabled: 1
+    path: Assets/Scenes/GameJamStage1.unity
+    guid: dea3511c04028794aadd26226e8dd8c6
   m_configObjects: {}

@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSet: {fileID: 0}
+  clearStateList: []
   manager: {fileID: 0}
 --- !u!4 &249633610
 Transform:
