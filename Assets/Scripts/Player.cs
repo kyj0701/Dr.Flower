@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
                 currentTime = DateTime.Now;
                 flag = false;
                 sliding = true;
+                anim.SetBool("IsSliding", true);
                 return;
             }
         }
@@ -65,6 +66,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            anim.SetBool("IsSliding", false);
             CanJump = true;
             sliding = false;
         }
