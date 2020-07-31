@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -21,7 +22,8 @@ public class Player : MonoBehaviour
     public float windpower;
     public float maxSpeedMultiplierwithWind;
     bool CanJump;
-    //get horizontal input
+    bool sliding;
+    System.DateTime currentTime;
     static float h;
 
     void Awake()
@@ -41,17 +43,30 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButton("Jump") && CanJump)
             {
-                if(spriteRenderer.flipX == true)
-                {
-                    rigid.velocity = new Vector2((-1)*maxSpeed, rigid.velocity.y);
-                    flag = false;
-                }
-                else
-                {
-                    rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-                    flag = false;
-                }
+                CanJump = false;
+                currentTime = DateTime.Now;
+                flag = false;
+                sliding = true;
+                return;
             }
+        }
+        System.TimeSpan diff = DateTime.Now - currentTime;
+        if (diff.Milliseconds < 300 && sliding)
+        {
+            if (spriteRenderer.flipX == true)
+            {
+                rigid.velocity = new Vector2((-1) * maxSpeed*2f, rigid.velocity.y);
+            }
+            else
+            {
+                rigid.velocity = new Vector2(maxSpeed*2f, rigid.velocity.y);
+            }
+            return;
+        }
+        else
+        {
+            CanJump = true;
+            sliding = false;
         }
         //jump
         if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJumping") && CanJump && flag)
@@ -132,7 +147,7 @@ public class Player : MonoBehaviour
 
 
         //maxSpeed control
-        if (rigid.velocity.x > maxSpeed)
+        if (rigid.velocity.x > maxSpeed && !sliding)
         {
             if(windswitch)
             {
@@ -162,7 +177,7 @@ public class Player : MonoBehaviour
                 rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
             }
         }
-        else if (rigid.velocity.x < maxSpeed * (-1))
+        else if (rigid.velocity.x < maxSpeed * (-1) && !sliding)
         {
             if (windswitch)
             {
