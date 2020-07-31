@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
@@ -7,8 +8,14 @@ using UnityEngine.Video;
 public class ButtonManager : MonoBehaviour
 {
     public GameObject menuSet;
+    public GameObject[] clearStateList;
     public GameManagerLogic manager;
     public static Dictionary<string, bool> clearStateDic;
+
+    void Awake()
+    {
+        clearCheck();
+    }
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -102,6 +109,17 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Stage2-5");
         TimeReset();
     }
+
+    public void GameJameSelectStage()
+    {
+        SceneManager.LoadScene("GameJamStage");
+        clearCheck();
+    }
+    public void GameJamSelectStage1()
+    {
+        SceneManager.LoadScene("GameJamStage1");
+        TimeReset();
+    }
     public void MainMenu()
     {
         SceneManager.LoadScene("Start");
@@ -110,4 +128,21 @@ public class ButtonManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void clearCheck()
+    {
+        if (clearStateDic != null)
+        {
+            foreach (KeyValuePair<string, bool> pair in clearStateDic)
+            {
+                foreach (GameObject i in clearStateList)
+                {
+                    if (pair.Key == i.name && pair.Value == true)
+                        i.SetActive(true);
+                }
+            }
+        }
+    }
+
 }
+
