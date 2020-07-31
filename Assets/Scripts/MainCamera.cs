@@ -29,8 +29,7 @@ public class MainCamera : MonoBehaviour
         {    
             rain.Play();
             rainpos = rainTransform.position;
-            rainpos.x -= 4;
-            rainpos.y += 10;
+            rainpos.y += 11;
             rain.transform.position = rainpos;
         }
         else
