@@ -1458,8 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55dff8e493fef824b9f1d5e865854e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalItemCount: 8
-  stageLevel: 2
+  totalItemCount: 13
   stageCountText: {fileID: 1441620208}
   playerCountText: {fileID: 2142353375}
 --- !u!114 &670544794
@@ -1475,6 +1474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSet: {fileID: 314731589}
+  clearStateList: []
   manager: {fileID: 670544793}
 --- !u!61 &670544795
 BoxCollider2D:
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 844299905}
   - component: {fileID: 844299904}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1840,6 +1840,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera_size: 6
   Camera_z: -10
+  rain: {fileID: 0}
+  israin: 0
 --- !u!4 &1056511688
 Transform:
   m_ObjectHideFlags: 0
