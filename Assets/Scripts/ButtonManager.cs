@@ -50,6 +50,7 @@ public class ButtonManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        TimeReset();
     }
     public void SelectStage1()
     {
@@ -118,6 +119,21 @@ public class ButtonManager : MonoBehaviour
     public void GameJamSelectStage1()
     {
         SceneManager.LoadScene("GameJamStage1");
+        TimeReset();
+    }
+    public void GameJamSelectStage2()
+    {
+        SceneManager.LoadScene("GameJamStage2");
+        TimeReset();
+    }
+    public void GameJamSelectStage3()
+    {
+        SceneManager.LoadScene("GameJamStage3");
+        TimeReset();
+    }
+    public void GameJamSelectStage4()
+    {
+        SceneManager.LoadScene("GameJamStage4");
         TimeReset();
     }
     public void MainMenu()

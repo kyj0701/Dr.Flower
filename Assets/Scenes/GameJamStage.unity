@@ -334,7 +334,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 654199806}
-        m_MethodName: SelectStage2_5
+        m_MethodName: GameJamSelectStage2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -612,7 +612,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 654199806}
-        m_MethodName: 
+        m_MethodName: GameJamSelectStage3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -792,7 +792,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 654199806}
-        m_MethodName: 
+        m_MethodName: GameJamSelectStage4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
