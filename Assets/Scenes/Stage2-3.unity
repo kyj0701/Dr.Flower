@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 61122484}
   - component: {fileID: 61122483}
   m_Layer: 0
-  m_Name: Flower (1)
+  m_Name: Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,12 +212,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61122482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.14, y: 10.74, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.34065, y: 9.686209, z: 27.582191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1658714004}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &190471727
 GameObject:
@@ -384,12 +384,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286607780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.53, y: 0.35, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.730649, y: -0.70379055, z: 27.582191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1658714004}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &320841274
 GameObject:
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 393318440}
   - component: {fileID: 393318439}
   m_Layer: 0
-  m_Name: Flower (2)
+  m_Name: Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,12 +640,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393318438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.24, y: 18.81, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.4406493, y: 17.756208, z: 27.582191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1658714004}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &454621498
 GameObject:
@@ -1104,7 +1104,7 @@ RectTransform:
   - {fileID: 657228423}
   - {fileID: 638536650}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1201,6 +1201,8 @@ GameObject:
   - component: {fileID: 954185219}
   - component: {fileID: 954185218}
   - component: {fileID: 954185220}
+  - component: {fileID: 954185222}
+  - component: {fileID: 954185221}
   m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
@@ -14281,10 +14283,289 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!66 &954185221
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954185216}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 954185220}
+    m_ColliderPaths:
+    - - X: 380000000
+        Y: 370000000
+      - X: 300000000
+        Y: 370000000
+      - X: 300000000
+        Y: 220000000
+      - X: 220000000
+        Y: 220000000
+      - X: 220000000
+        Y: 200000000
+      - X: 270000000
+        Y: 200000000
+      - X: 270000000
+        Y: 50000000
+      - X: 260000000
+        Y: 50000000
+      - X: 260000000
+        Y: 40000000
+      - X: 250000000
+        Y: 40000000
+      - X: 250000000
+        Y: 30000000
+      - X: 240000000
+        Y: 30000000
+      - X: 240000000
+        Y: 20000000
+      - X: 230000000
+        Y: 20000000
+      - X: 230000000
+        Y: 10000000
+      - X: 220000000
+        Y: 10000000
+      - X: 220000000
+        Y: -50000000
+      - X: 270000000
+        Y: -50000000
+      - X: 270000000
+        Y: -140000000
+      - X: 380000000
+        Y: -140000000
+    - - X: 10000000
+        Y: 110000000
+      - X: 0
+        Y: 110000000
+      - X: 0
+        Y: 120000000
+      - X: -10000000
+        Y: 120000000
+      - X: -10000000
+        Y: 130000000
+      - X: -20000000
+        Y: 130000000
+      - X: -20000000
+        Y: 140000000
+      - X: -30000000
+        Y: 140000000
+      - X: -30000000
+        Y: 150000000
+      - X: -40000000
+        Y: 150000000
+      - X: -40000000
+        Y: 160000000
+      - X: -70000000
+        Y: 160000000
+      - X: -70000000
+        Y: 230000000
+      - X: -210000000
+        Y: 230000000
+      - X: -210000000
+        Y: 130000000
+      - X: -200000000
+        Y: 130000000
+      - X: -200000000
+        Y: 120000000
+      - X: -180000000
+        Y: 120000000
+      - X: -180000000
+        Y: 110000000
+      - X: -160000000
+        Y: 110000000
+      - X: -160000000
+        Y: 100000000
+      - X: 10000000
+        Y: 100000000
+    - - X: 180000000
+        Y: 200000000
+      - X: 110000000
+        Y: 200000000
+      - X: 110000000
+        Y: 180000000
+      - X: 180000000
+        Y: 180000000
+    - - X: 70000000
+        Y: 180000000
+      - X: 0
+        Y: 180000000
+      - X: 0
+        Y: 160000000
+      - X: 70000000
+        Y: 160000000
+    - - X: -310000000
+        Y: -70000000
+      - X: -260000000
+        Y: -70000000
+      - X: -260000000
+        Y: -20000000
+      - X: -310000000
+        Y: -20000000
+      - X: -310000000
+        Y: 110000000
+      - X: -430000000
+        Y: 110000000
+      - X: -430000000
+        Y: -210000000
+      - X: -310000000
+        Y: -210000000
+    - - X: 120000000
+        Y: 90000000
+      - X: 50000000
+        Y: 90000000
+      - X: 50000000
+        Y: 70000000
+      - X: 120000000
+        Y: 70000000
+    - - X: 230000000
+        Y: 70000000
+      - X: 160000000
+        Y: 70000000
+      - X: 160000000
+        Y: 50000000
+      - X: 230000000
+        Y: 50000000
+    - - X: 180000000
+        Y: -10000000
+      - X: 110000000
+        Y: -10000000
+      - X: 110000000
+        Y: -70000000
+      - X: 180000000
+        Y: -70000000
+    - - X: 70000000
+        Y: -30000000
+      - X: 0
+        Y: -30000000
+      - X: 0
+        Y: -90000000
+      - X: 70000000
+        Y: -90000000
+    - - X: -40000000
+        Y: -50000000
+      - X: -220000000
+        Y: -50000000
+      - X: -220000000
+        Y: -110000000
+      - X: -40000000
+        Y: -110000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 37.999973, y: -14}
+      - {x: 37.999973, y: 37}
+      - {x: 30, y: 36.999973}
+      - {x: 29.999971, y: 22}
+      - {x: 22, y: 21.999971}
+      - {x: 22.000029, y: 20}
+      - {x: 27, y: 19.999971}
+      - {x: 26.999971, y: 5}
+      - {x: 26, y: 4.999971}
+      - {x: 25.999971, y: 4}
+      - {x: 25, y: 3.999971}
+      - {x: 24.999971, y: 3}
+      - {x: 24, y: 2.999971}
+      - {x: 23.999971, y: 2}
+      - {x: 23, y: 1.9999708}
+      - {x: 22.999971, y: 1}
+      - {x: 22, y: 0.99997073}
+      - {x: 22.000029, y: -5}
+      - {x: 27, y: -5.0000296}
+      - {x: 27.000029, y: -14}
+    - - {x: 0.99997073, y: 10}
+      - {x: 0.99997073, y: 11}
+      - {x: 0, y: 11.00003}
+      - {x: -0.000029300001, y: 12}
+      - {x: -1, y: 12.00003}
+      - {x: -1.0000293, y: 13}
+      - {x: -2, y: 13.00003}
+      - {x: -2.0000293, y: 14}
+      - {x: -3, y: 14.000029}
+      - {x: -3.0000293, y: 15}
+      - {x: -4, y: 15.000029}
+      - {x: -4.000029, y: 16}
+      - {x: -7, y: 16.000029}
+      - {x: -7.0000296, y: 23}
+      - {x: -21, y: 22.999971}
+      - {x: -20.999971, y: 13}
+      - {x: -20, y: 12.99997}
+      - {x: -19.999971, y: 12}
+      - {x: -18, y: 11.99997}
+      - {x: -17.999971, y: 11}
+      - {x: -16, y: 10.99997}
+      - {x: -15.999971, y: 10}
+    - - {x: 17.999971, y: 18}
+      - {x: 17.999971, y: 20}
+      - {x: 11, y: 19.999971}
+      - {x: 11.00003, y: 18}
+    - - {x: 6.9999704, y: 16}
+      - {x: 6.9999704, y: 18}
+      - {x: 0, y: 17.999971}
+      - {x: 0.000029300001, y: 16}
+    - - {x: -31.000029, y: -21}
+      - {x: -30.999971, y: -7}
+      - {x: -26, y: -6.9999704}
+      - {x: -26.000029, y: -2}
+      - {x: -31, y: -1.9999707}
+      - {x: -31.000029, y: 11}
+      - {x: -43, y: 10.99997}
+      - {x: -42.999973, y: -21}
+    - - {x: 11.99997, y: 7}
+      - {x: 11.99997, y: 9}
+      - {x: 5, y: 8.99997}
+      - {x: 5.000029, y: 7}
+    - - {x: 22.999971, y: 5}
+      - {x: 22.999971, y: 7}
+      - {x: 16, y: 6.9999704}
+      - {x: 16.000029, y: 5}
+    - - {x: 17.999971, y: -7}
+      - {x: 17.999971, y: -1}
+      - {x: 11, y: -1.0000293}
+      - {x: 11.00003, y: -7}
+    - - {x: 6.9999704, y: -9}
+      - {x: 6.9999704, y: -3}
+      - {x: 0, y: -3.0000293}
+      - {x: 0.000029300001, y: -9}
+    - - {x: -4.000029, y: -11}
+      - {x: -4.000029, y: -5}
+      - {x: -22, y: -5.000029}
+      - {x: -21.999971, y: -11}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &954185222
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954185216}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1104107238
 GameObject:
   m_ObjectHideFlags: 0
@@ -14306,8 +14587,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!70 &1104107239
-CapsuleCollider2D:
+--- !u!61 &1104107239
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14320,8 +14601,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
   m_Size: {x: 0.9, y: 1.8}
-  m_Direction: 0
+  m_EdgeRadius: 0
 --- !u!95 &1104107240
 Animator:
   serializedVersion: 3
@@ -14447,7 +14738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1173567556
 GameObject:
@@ -14590,7 +14881,7 @@ GameObject:
   - component: {fileID: 1214597863}
   - component: {fileID: 1214597862}
   m_Layer: 0
-  m_Name: Flower (3)
+  m_Name: Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14669,12 +14960,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214597861}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.08, y: 21.59, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.280649, y: 20.53621, z: 27.582191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1658714004}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1219451252
 GameObject:
@@ -14688,7 +14979,7 @@ GameObject:
   - component: {fileID: 1219451254}
   - component: {fileID: 1219451253}
   m_Layer: 0
-  m_Name: Flower (4)
+  m_Name: Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14767,12 +15058,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219451252}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.74, y: 22.71, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 28.940649, y: 21.656208, z: 27.582191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1658714004}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1244984153
 GameObject:
@@ -14880,7 +15171,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270654353
 GameObject:
@@ -14924,7 +15215,7 @@ Transform:
   m_Children:
   - {fileID: 954185217}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344755763
 GameObject:
@@ -15119,7 +15410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1516910581
 GameObject:
@@ -15273,7 +15564,7 @@ GameObject:
   - component: {fileID: 1579517657}
   - component: {fileID: 1579517656}
   m_Layer: 0
-  m_Name: Flower (5)
+  m_Name: Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15352,12 +15643,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579517655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.02, y: -1.72, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8193507, y: -2.7737906, z: 27.582191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1658714004}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1585237666
 GameObject:
@@ -15566,6 +15857,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587082896}
   m_CullTransparentMesh: 0
+--- !u!1 &1658714003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658714004}
+  m_Layer: 0
+  m_Name: Item
+  m_TagString: Flower
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1658714004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658714003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20064922, y: 1.0537906, z: -27.582191}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 286607783}
+  - {fileID: 61122485}
+  - {fileID: 393318441}
+  - {fileID: 1214597864}
+  - {fileID: 1219451255}
+  - {fileID: 1579517658}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844534289
 GameObject:
   m_ObjectHideFlags: 0
@@ -15755,7 +16082,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1859758454
 MonoBehaviour:
