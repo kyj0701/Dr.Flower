@@ -38,14 +38,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        bool flag = true;
         if (Input.GetButton("Down"))
         {
             if (Input.GetButton("Jump") && CanJump)
             {
                 CanJump = false;
                 currentTime = DateTime.Now;
-                flag = false;
                 sliding = true;
                 anim.SetBool("IsSliding", true);
                 return;
@@ -64,14 +62,13 @@ public class Player : MonoBehaviour
             }
             return;
         }
-        else
+        else if (CanJump)
         {
             anim.SetBool("IsSliding", false);
-            CanJump = true;
             sliding = false;
         }
         //jump
-        if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJumping") && CanJump && flag)
+        if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJumping") && CanJump)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("IsJumping", true);
