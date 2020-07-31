@@ -32,6 +32,63 @@ TextureImporter:
   - first:
       213: -4685305421336290397
     second: Dr.Flower_4
+  - first:
+      213: 9221643147047863270
+    second: Dr.Flower_5
+  - first:
+      213: -5500918379862321771
+    second: Dr.Flower_6
+  - first:
+      213: 5304762116522338856
+    second: Dr.Flower_7
+  - first:
+      213: 7209519051199116476
+    second: Dr.Flower_8
+  - first:
+      213: 6212528039341480943
+    second: Dr.Flower_9
+  - first:
+      213: 781953860656488296
+    second: Dr.Flower_10
+  - first:
+      213: -7662994499554039077
+    second: Dr.Flower_11
+  - first:
+      213: -4093192579541173012
+    second: Dr.Flower_12
+  - first:
+      213: -7762220162635543828
+    second: Dr.Flower_13
+  - first:
+      213: -725283859109296607
+    second: Dr.Flower_14
+  - first:
+      213: 2682438162204536473
+    second: Dr.Flower_15
+  - first:
+      213: 5594313112558853668
+    second: Dr.Flower_16
+  - first:
+      213: 4836967090460806437
+    second: Dr.Flower_17
+  - first:
+      213: 6933979404226812004
+    second: Dr.Flower_18
+  - first:
+      213: -2210861972027492731
+    second: Dr.Flower_19
+  - first:
+      213: -4915940384048385954
+    second: Dr.Flower_20
+  - first:
+      213: 6701024574509209523
+    second: Dr.Flower_21
+  - first:
+      213: 6728191343468603869
+    second: Dr.Flower_22
+  - first:
+      213: 5387368135497919024
+    second: Dr.Flower_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -229,6 +286,27 @@ TextureImporter:
       bones: []
       spriteID: 3abd9090b837afeb0800000000000000
       internalID: -4685305421336290397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dr.Flower_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e30439759bd9ff70800000000000000
+      internalID: 9221643147047863270
       vertices: []
       indices: 
       edges: []
