@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    AudioSource audio;
     public GameObject clearSet;
     public GameObject clearState;
     public Dictionary<string, bool> clearStateDic;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
         CanJump = true;
         
     }
@@ -74,6 +76,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Flower")
         {
             flowerCount++;
+            audio.Play();
             collision.gameObject.SetActive(false);
             manager.GetItem(flowerCount);
         }
@@ -82,7 +85,7 @@ public class Player : MonoBehaviour
             clearSet.SetActive(true);
             Time.timeScale = 0;
             // Clear
-            if (flowerCount > manager.totalItemCount * (4/5))
+            if (flowerCount >= (manager.totalItemCount * 4 / 5))
             {
                 clearSet.SetActive(true);
                 Time.timeScale = 0;
@@ -92,7 +95,9 @@ public class Player : MonoBehaviour
             // Restart
             else
             {
+                clearSet.SetActive(false);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                Time.timeScale = 1;
             }
         }
         
