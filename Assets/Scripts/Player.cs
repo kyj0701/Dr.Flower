@@ -36,8 +36,25 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        bool flag = true;
+        if (Input.GetButton("Down"))
+        {
+            if (Input.GetButton("Jump") && CanJump)
+            {
+                if(spriteRenderer.flipX == true)
+                {
+                    rigid.velocity = new Vector2((-1)*maxSpeed, rigid.velocity.y);
+                    flag = false;
+                }
+                else
+                {
+                    rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+                    flag = false;
+                }
+            }
+        }
         //jump
-        if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJumping") && CanJump)
+        if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJumping") && CanJump && flag)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("IsJumping", true);
@@ -51,6 +68,7 @@ public class Player : MonoBehaviour
             rigid.AddForce(Vector2.right * (h) * Time.deltaTime*50, ForceMode2D.Impulse);
             
         }
+        
         rigid.AddForce(Vector2.right * ((-1) * windpower) * Time.deltaTime * 50, ForceMode2D.Impulse);
         //break when button up
         if (Input.GetButtonUp("Horizontal"))
