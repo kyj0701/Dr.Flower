@@ -9,7 +9,6 @@ public class ButtonManager : MonoBehaviour
 {
     public GameObject menuSet;
     public GameObject[] clearStateList;
-    public GameManagerLogic manager;
     public static Dictionary<string, bool> clearStateDic;
 
     void Awake()
@@ -129,11 +128,6 @@ public class ButtonManager : MonoBehaviour
     public void GameJamSelectStage3()
     {
         SceneManager.LoadScene("GameJamStage3");
-        TimeReset();
-    }
-    public void GameJamSelectStage4()
-    {
-        SceneManager.LoadScene("GameJamStage4");
         TimeReset();
     }
     public void MainMenu()
