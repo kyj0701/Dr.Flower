@@ -1238,6 +1238,8 @@ MonoBehaviour:
   Camera_z: -10
   rain: {fileID: 1285040740}
   israin: 1
+  dieSet: {fileID: 764745369}
+  dontClearSet: {fileID: 1810110406}
 --- !u!4 &659054120
 Transform:
   m_ObjectHideFlags: 0
