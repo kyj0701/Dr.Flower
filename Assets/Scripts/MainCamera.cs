@@ -13,6 +13,8 @@ public class MainCamera : MonoBehaviour
     public ParticleSystem rain;
     public bool israin;
     private new AudioSource audio;
+    public GameObject dieSet;
+    public GameObject dontClearSet;
     
     void Awake()
     {
@@ -40,6 +42,12 @@ public class MainCamera : MonoBehaviour
         }
         else
             rain.Stop();
+
+        if(dontClearSet.activeSelf == true || dieSet.activeSelf == true)
+        {
+            audio.Stop();
+        } 
+
     }
 
     void LateUpdate()
