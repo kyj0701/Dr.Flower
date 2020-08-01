@@ -12,6 +12,7 @@ public class MainCamera : MonoBehaviour
     Vector3 rainpos;
     public ParticleSystem rain;
     public bool israin;
+    private new AudioSource audio;
     
     void Awake()
     {
@@ -21,12 +22,17 @@ public class MainCamera : MonoBehaviour
         Offset.z = Camera_z;
         Offset.y += 1;
         rainTransform = playerTransform;
+        audio = GetComponent<AudioSource>();
+        if (israin)
+            audio.Play();
+        else
+            audio.Stop();
     }
 
     void Update()
     {
         if (israin)
-        {    
+        {   
             rain.Play();
             rainpos = rainTransform.position;
             rainpos.y += 11;
