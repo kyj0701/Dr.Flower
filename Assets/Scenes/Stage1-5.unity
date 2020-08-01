@@ -79139,7 +79139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &992407257
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -95952,7 +95952,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuSet: {fileID: 1027741817}
   clearStateList: []
-  manager: {fileID: 1171627289}
 --- !u!1 &1269693236
 GameObject:
   m_ObjectHideFlags: 0

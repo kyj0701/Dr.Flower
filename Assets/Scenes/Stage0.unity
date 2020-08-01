@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &230950703
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -8493,13 +8493,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d473d02140f24044a86272633fcb0b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearSet: {fileID: 0}
+  clearSet: {fileID: 6832781}
   clearState: {fileID: 0}
   jumpPower: 18
   maxSpeed: 7
   reduceSpeed: 0.2
   flowerCount: 0
-  manager: {fileID: 0}
+  manager: {fileID: 1070307863}
   windswitch: 0
   windpower: 0
   maxSpeedMultiplierwithWind: 0
