@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     bool sliding;
     System.DateTime currentTime;
     static float h;
-    public int sliding_distance;
+    int sliding_distance;
 
     void Awake()
     {
@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        sliding_distance = 300;
         CanJump = true;
         
     }
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
             else
             {
                 anim.SetBool("IsSliding", false);
+                rigid.velocity = new Vector2(0, rigid.velocity.y);
                 sliding = false;
             }
             return;
@@ -113,6 +115,14 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Flower")
         {
+            flowerCount++;
+            audio.Play();
+            collision.gameObject.SetActive(false);
+            manager.GetItem(flowerCount);
+        }
+        else if (collision.gameObject.tag == "Flower2")
+        {
+            flowerCount++;
             flowerCount++;
             audio.Play();
             collision.gameObject.SetActive(false);
