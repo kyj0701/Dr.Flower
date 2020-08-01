@@ -28,6 +28,16 @@ public class Player : MonoBehaviour
     static float h;
     int sliding_distance;
 
+    void sliding_collider()
+    {
+        b_collider.offset = new Vector2(0.03f,-0.434f);
+        b_collider.size = new Vector2(1.564f,1.132f);
+    }
+    void reset_collider()
+    {
+        b_collider.offset = new Vector2(0f,-0.171f);
+        b_collider.size = new Vector2(0.9f,1.659f);
+    }
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -37,17 +47,9 @@ public class Player : MonoBehaviour
         sliding_distance = 300;
         CanJump = true;
         b_collider = GetComponent<BoxCollider2D>();
+        reset_collider();
     }
-    void sliding_collider()
-    {
-        b_collider.offset = new Vector2(0.03f,-0.434f);
-        b_collider.size = new Vector2(1.564f,1.132f);
-    }
-    void reset_collider()
-    {
-        b_collider.offset = new Vector2(0f,-0.1f);
-        b_collider.size = new Vector2(0.9f,1.8f);
-    }
+    
     void Update()
     {
         if (Input.GetButton("Down")&&!sliding)
@@ -101,6 +103,10 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = h == -1;
             rigid.AddForce(Vector2.right * (h) * Time.deltaTime*50, ForceMode2D.Impulse);
             
+        }
+        else
+        {
+            h = 0;
         }
         
         rigid.AddForce(Vector2.right * ((-1) * windpower) * Time.deltaTime * 50, ForceMode2D.Impulse);
@@ -216,9 +222,7 @@ public class Player : MonoBehaviour
                     }
                     else if (h == 0)
                     {
- 
                         rigid.velocity = new Vector2((-1) * maxSpeed, rigid.velocity.y);
-          
                     }
                 }
                 else if (windpower < 0)
