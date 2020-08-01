@@ -134,6 +134,7 @@ public class ButtonManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Start");
+        TimeReset();
     }
     public void GameExit()
     {
