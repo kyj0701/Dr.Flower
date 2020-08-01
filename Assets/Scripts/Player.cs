@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     bool sliding;
     System.DateTime currentTime;
     static float h;
+    public int sliding_distance;
 
     void Awake()
     {
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour
         if (sliding)
         {
             System.TimeSpan diff = DateTime.Now - currentTime;
-            if (diff.Milliseconds < 300)
+            if (diff.Milliseconds < sliding_distance)
             {
                 if (spriteRenderer.flipX == true)
                 {
