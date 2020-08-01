@@ -10,10 +10,21 @@ public class GameManagerLogic : MonoBehaviour
     public Text stageCountText;
     public Text playerCountText;
     public GameObject dieSet;
+    public GameObject dontClearSet;
+    private new AudioSource audio;
 
     void Awake()
     {
         stageCountText.text = "/ " + totalItemCount;
+        audio = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if(dontClearSet.activeSelf == true || dieSet.activeSelf == true)
+        {
+            audio.Stop();
+        }
     }
 
     public void GetItem(int count)
