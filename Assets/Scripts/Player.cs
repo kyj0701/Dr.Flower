@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     AudioSource audio;
+    BoxCollider2D b_collider;
     public GameObject clearSet;
     public GameObject clearState;
     public Dictionary<string, bool> clearStateDic;
@@ -35,18 +36,28 @@ public class Player : MonoBehaviour
         audio = GetComponent<AudioSource>();
         sliding_distance = 300;
         CanJump = true;
-        
+        b_collider = GetComponent<BoxCollider2D>();
     }
-
+    void sliding_collider()
+    {
+        b_collider.offset = new Vector2(0.03f,-0.434f);
+        b_collider.size = new Vector2(1.564f,1.132f);
+    }
+    void reset_collider()
+    {
+        b_collider.offset = new Vector2(0f,-0.1f);
+        b_collider.size = new Vector2(0.9f,1.8f);
+    }
     void Update()
     {
-        if (Input.GetButton("Down"))
+        if (Input.GetButton("Down")&&!sliding)
         {
             if (Input.GetButton("Jump") && CanJump)
             {
                 CanJump = false;
                 currentTime = DateTime.Now;
                 sliding = true;
+                sliding_collider();
                 anim.SetBool("IsSliding", true);
                 return;
             }
@@ -68,6 +79,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                reset_collider();
                 anim.SetBool("IsSliding", false);
                 rigid.velocity = new Vector2(0, rigid.velocity.y);
                 sliding = false;
@@ -226,14 +238,13 @@ public class Player : MonoBehaviour
 
         Vector2 frontVec = new Vector2(rigid.position.x + 0.44f, rigid.position.y);
         Vector2 backVec = new Vector2(rigid.position.x + -0.44f, rigid.position.y);
-        RaycastHit2D rayHit_f = Physics2D.Raycast(frontVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
-        RaycastHit2D rayHit_b = Physics2D.Raycast(backVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
+        RaycastHit2D rayHit_f = Physics2D.Raycast(frontVec, Vector3.down, 1.01f, LayerMask.GetMask("Platform"));
+        RaycastHit2D rayHit_b = Physics2D.Raycast(backVec, Vector3.down, 1.01f, LayerMask.GetMask("Platform"));
         //set layer as "Platform"
         if (rayHit_f.collider != null || rayHit_b.collider != null)
-        {
-            if (rayHit_f.distance < 1.2f || rayHit_b.distance < 1.2f)
-                CanJump = true;
-                anim.SetBool("IsJumping", false);
+        {    
+            CanJump = true;
+            anim.SetBool("IsJumping", false);
         }
         else
         {
