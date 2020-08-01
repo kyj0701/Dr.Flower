@@ -231,8 +231,8 @@ public class Player : MonoBehaviour
         //set layer as "Platform"
         if (rayHit_f.collider != null || rayHit_b.collider != null)
         {
-            CanJump = true;
             if (rayHit_f.distance < 1.2f || rayHit_b.distance < 1.2f)
+                CanJump = true;
                 anim.SetBool("IsJumping", false);
         }
         else
