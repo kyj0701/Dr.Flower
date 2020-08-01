@@ -49,24 +49,29 @@ public class Player : MonoBehaviour
                 return;
             }
         }
-        System.TimeSpan diff = DateTime.Now - currentTime;
-        if (diff.Milliseconds < 300 && sliding)
+        
+        if (sliding)
         {
-            if (spriteRenderer.flipX == true)
+            System.TimeSpan diff = DateTime.Now - currentTime;
+            if (diff.Milliseconds < 300)
             {
-                rigid.velocity = new Vector2((-1) * maxSpeed*2f, rigid.velocity.y);
+                if (spriteRenderer.flipX == true)
+                {
+                    rigid.velocity = new Vector2((-1) * maxSpeed*2f, rigid.velocity.y);
+                }
+                else
+                {
+                    rigid.velocity = new Vector2(maxSpeed*2f, rigid.velocity.y);
+                }
             }
             else
             {
-                rigid.velocity = new Vector2(maxSpeed*2f, rigid.velocity.y);
+                anim.SetBool("IsSliding", false);
+                sliding = false;
             }
             return;
         }
-        else if (CanJump)
-        {
-            anim.SetBool("IsSliding", false);
-            sliding = false;
-        }
+        
         //jump
         if (Input.GetButtonDown("Jump") && !anim.GetBool("IsJumping") && CanJump)
         {
@@ -208,8 +213,8 @@ public class Player : MonoBehaviour
         }
 
 
-        Vector2 frontVec = new Vector2(rigid.position.x + 0.45f, rigid.position.y);
-        Vector2 backVec = new Vector2(rigid.position.x + -0.45f, rigid.position.y);
+        Vector2 frontVec = new Vector2(rigid.position.x + 0.44f, rigid.position.y);
+        Vector2 backVec = new Vector2(rigid.position.x + -0.44f, rigid.position.y);
         RaycastHit2D rayHit_f = Physics2D.Raycast(frontVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
         RaycastHit2D rayHit_b = Physics2D.Raycast(backVec, Vector3.down, 1.2f, LayerMask.GetMask("Platform"));
         //set layer as "Platform"
