@@ -69913,7 +69913,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuSet: {fileID: 219169669}
   clearStateList: []
-  manager: {fileID: 1290531788}
 --- !u!114 &1290531788
 MonoBehaviour:
   m_ObjectHideFlags: 0

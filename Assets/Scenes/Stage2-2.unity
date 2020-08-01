@@ -137563,7 +137563,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuSet: {fileID: 657228422}
   clearStateList: []
-  manager: {fileID: 1859758452}
 --- !u!61 &1859758455
 BoxCollider2D:
   m_ObjectHideFlags: 0
