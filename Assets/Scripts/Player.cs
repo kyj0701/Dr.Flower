@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private new AudioSource audio;
     BoxCollider2D b_collider;
     public GameObject clearSet;
+    public GameObject dontClearSet;
     public GameObject clearState;
     public Dictionary<string, bool> clearStateDic;
     public float jumpPower;
@@ -148,22 +149,18 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Finish")
         {
-            clearSet.SetActive(true);
             Time.timeScale = 0;
             // Clear
             if (flowerCount >= (manager.totalItemCount * 4 / 5))
             {
                 clearSet.SetActive(true);
-                Time.timeScale = 0;
                 if (!ButtonManager.clearStateDic.ContainsKey(SceneManager.GetActiveScene().name))
                     ButtonManager.clearStateDic.Add(SceneManager.GetActiveScene().name, true);
             }
             // Restart
             else
             {
-                clearSet.SetActive(false);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                Time.timeScale = 1;
+                dontClearSet.SetActive(true);
             }
         }
         
