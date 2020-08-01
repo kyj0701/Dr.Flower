@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
-    AudioSource audio;
+    private new AudioSource audio;
     BoxCollider2D b_collider;
     public GameObject clearSet;
     public GameObject clearState;
