@@ -40,6 +40,7 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Stage0");
         clearStateDic = new Dictionary<string, bool>();
+        TimeReset();
     }
     public void GameJam()
     {
