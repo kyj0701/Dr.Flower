@@ -9,6 +9,7 @@ public class GameManagerLogic : MonoBehaviour
     public int totalItemCount;
     public Text stageCountText;
     public Text playerCountText;
+    public GameObject dieSet;
 
     void Awake()
     {
@@ -24,7 +25,8 @@ public class GameManagerLogic : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 0;
+            dieSet.SetActive(true);
         }
     }
 }
